@@ -3,6 +3,8 @@
 
 <body>
 
+<div id="publicSection">
+    
 <h1 style="font-size:90%; font-family:arial">
     <strong><font color="orange">
 
@@ -29,13 +31,24 @@ Anlayışınız için teşekkür ederiz.
         <label for="password"></label>
         <input type="password" id="password" name="password" required>
         <br>
-           <!-- Bu satır gizli bir yorumdur <button type="submit">Giriş Yap</button> -->
+          
     </form>
+ <!-- HERKESE AÇIK OLAN GİZLENECEK BÖLÜM SONU <button type="submit">Giriş Yap</button> -->  </div>
 
 
-    <p id="message">
 
-    <div id="content" style="display: none;">
+
+
+
+
+
+
+    
+
+ <div id="privateSection" class="hidden">
+     
+    
+
         <h2>Kanal Listesine Hoş geldiniz !</h2>
        
 <h1><font color="orange">TV KANALLARI GENEL</font></h1>
@@ -71,9 +84,9 @@ Anlayışınız için teşekkür ederiz.
             </ul>
         </div>
     </div>
-</p>
+    
 
-    </div>
+     <!-- GİZLİ BÖLÜMÜN SONU <button type="submit">Giriş Yap</button> -->  </div>
 
     <script>
         const form = document.getElementById('passwordForm');
@@ -98,8 +111,19 @@ Anlayışınız için teşekkür ederiz.
             }
         });
     </script>
-
-
+            <script>
+        function login() {
+            const password = document.getElementById('password').value;
+            // Basit bir şifre kontrolü (örneğin "12345")
+            if (password === '12345') {
+                document.getElementById('publicSection').style.display = 'none'; // Herkese açık bölümü gizle
+                document.getElementById('loginSection').style.display = 'none'; // Giriş bölümünü gizle
+                document.getElementById('privateSection').classList.remove('hidden'); // Özel bölümü göster
+            } else {
+                alert('Yanlış şifre! Lütfen tekrar deneyin.');
+            }
+        }
+    </script>
         
 </body>
 </html>
