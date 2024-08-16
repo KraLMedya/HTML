@@ -1,17 +1,46 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8">
-    <title>Privacy Policy</title></head><body><body bgcolor=black>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şifreyle Giriş</title>
+</head>
+<body>
+    <h1>Şifreyle Giriş Yap</h1>
+    <form id="passwordForm">
+        <label for="password">Şifre:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit">Giriş Yap</button>
+    </form>
+    <p id="message"></p>
+    <div id="content" style="display: none;">
+        <h2>Hoş geldiniz!</h2>
+        <p>Bu, şifreyle giriş yaptıktan sonra göreceğiniz içeriktir.</p>
+    </div>
 
-<h1 style="font-size:90%; font-family:arial">
-    <strong><font color="RED">
-<center>TELİF HAKKI | SORUMLULUK REDDİ</center>
-<strong><font color="DodgerBlue">
-    <br>
-Uygulama bünyesinde TELİF HAKKINA aykırı olabilecek hiçbir içeriğe yer vermiyor, barındırmıyor, desteklemiyor ve teşvik etmiyoruz.
-    <br><br>
-Bu alanda tüm Kullanıcılar tamamiyle kendi hür iradeleriyle, kendileri işlem gerçekleştirmekte ve bu eylem için HİÇ KİMSE teşvik edilmemektedir.
-    <br><br>
-Her şeye rağmen, TELİF HAKKINIZA istemdışı ve kasıtlı olmadan aykırı durabilecek bir içerikle karşılaşırsanız bize lütfen bildiriniz.
-<br><br>Datalarımızdan maksimum 72 saat içerisinde kaldırılacaktır.<br><br>
-Anlayışınız için teşekkür ederiz.
-</font></body></body>
+    <script>
+        const form = document.getElementById('passwordForm');
+        const message = document.getElementById('message');
+        const content = document.getElementById('content');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const password = document.getElementById('password').value;
+
+            // Örnek şifre
+            const validPassword = '12345';
+
+            if (password === validPassword) {
+                message.textContent = '';
+                content.style.display = 'block'; // İçeriği göster
+            } else {
+                message.textContent = 'Şifre hatalı. Lütfen tekrar deneyin.';
+                message.style.color = 'red';
+                content.style.display = 'none'; // İçeriği gizle
+            }
+        });
+    </script>
+</body>
 </html>
+    
