@@ -1,0 +1,129 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+    <title>KANAL LİSTESİ - KRAL MEDYA</title></head><body><body bgcolor=black>
+
+<body>
+
+<div id="publicSection">
+    
+<h1 style="font-size:90%; font-family:arial">
+    <strong><font color="orange">
+
+<h1 style="font-size:75%; font-family:arial">
+    <strong><font color="green">
+<center>TELİF HAKKI | SORUMLULUK REDDİ</center>
+<strong><font color="DodgerBlue">
+    <br>
+Uygulama bünyesinde TELİF HAKKINA aykırı olabilecek hiçbir içeriğe yer vermiyor, barındırmıyor, desteklemiyor ve teşvik etmiyoruz.
+    <br><br>
+Bu alanda tüm Kullanıcılar tamamiyle kendi hür iradeleriyle, kendileri işlem gerçekleştirmekte ve bu eylem için HİÇ KİMSE teşvik edilmemektedir.
+    <br><br>
+Her şeye rağmen, TELİF HAKKINIZA istemdışı ve kasıtlı olmadan aykırı durabilecek bir içerikle karşılaşırsanız bize lütfen bildiriniz.
+<br><br>Datalarımızdan maksimum 72 saat içerisinde kaldırılacaktır.<br><br>
+Anlayışınız için teşekkür ederiz.
+</font><br><br>
+
+
+
+<h1 style="font-size:90%; font-family:arial">    <strong><font color="green">
+<center>LÜTFEN SİZE SAĞLANAN ŞİFREYİ GİRİN<br><br><strong><font color="DodgerBlue">
+    
+    <form id="passwordForm">
+        <label for="password"></label>
+        <input type="password" id="password" name="password" required>
+        <br>
+          
+    </form>
+ <!-- HERKESE AÇIK OLAN GİZLENECEK BÖLÜM SONU <button type="submit">Giriş Yap</button> -->  </div>
+
+
+
+
+
+
+
+
+
+    
+
+ <div id="privateSection" class="hidden">
+     
+    
+
+        <h2>Kanal Listesine Hoş geldiniz !</h2>
+       
+<h1><font color="orange">TV KANALLARI GENEL</font></h1>
+<div align=center>
+<style>
+        .container {
+            display: flex; /* Flexbox kullanımı */
+            justify-content: space-between; /* Sütunlar arası boşluk */
+        }
+        .column {
+            width: 100%; /* Sütun genişliği */
+            padding: 50px; /* İç boşluk */
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Gölge efekti */
+        }
+    </style>
+
+            <div class="container">
+        <div class="column">
+            <h2><div align=left>KANAL ADI</h2>
+            <ol>
+                <li><div align=left>Birinci madde</li>
+                <li><div align=left>İkinci madde</li>
+                <li><div align=left>Üçüncü madde</li>
+            </ul>
+        </div>
+        
+        <div class="column">
+            <h2><div align=left>UYGULAMADA NASIL YAZILACAĞI</h2>
+            <ol>
+                <li><div align=left>Dördüncü madde burasıdır  aaaaaaaaaaaaa gardaşşşşaaaaaşş</li>
+                <li><div align=left>Beşinci madde</li>
+                <li><div align=left>Altıncı madde</li>
+            </ul>
+        </div>
+    </div>
+    
+
+     <!-- GİZLİ BÖLÜMÜN SONU <button type="submit">Giriş Yap</button> -->  </div>
+
+    <script>
+        const form = document.getElementById('passwordForm');
+        const message = document.getElementById('message');
+        const content = document.getElementById('content');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const password = document.getElementById('password').value;
+
+            // Örnek şifre
+            const validPassword = '12345';
+
+            if (password === validPassword) {
+                message.textContent = '';
+                content.style.display = 'block'; // İçeriği göster
+            } else {
+                 alert('Yanlış şifre! Lütfen tekrar deneyin.');
+                message.textContent = 'Şifre hatalı. Lütfen tekrar deneyin.';
+                message.style.color = 'orange';
+                content.style.display = 'none'; // İçeriği gizle
+            }
+        });
+    </script>
+            <script>
+        function login() {
+            const password = document.getElementById('password').value;
+            // Basit bir şifre kontrolü (örneğin "12345")
+            if (password === '12345') {
+                document.getElementById('publicSection').style.display = 'none'; // Herkese açık bölümü gizle
+                document.getElementById('loginSection').style.display = 'none'; // Giriş bölümünü gizle
+                document.getElementById('privateSection').classList.remove('hidden'); // Özel bölümü göster
+            } else {
+                alert('Yanlış şifre! Lütfen tekrar deneyin.');
+            }
+        }
+    </script>
+        
+</body>
+</html>
