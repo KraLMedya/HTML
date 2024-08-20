@@ -87,32 +87,12 @@ Anlayışınız için teşekkür ederiz.
     
 
      <!-- GİZLİ BÖLÜMÜN SONU <button type="submit">Giriş Yap</button> -->  </div>
-    <script>
-        const form = document.getElementById('passwordForm');
-        const message = document.getElementById('message');
-        const content = document.getElementById('content');
 
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const password = document.getElementById('password').value;
-
-            // Örnek şifre
-            const validPassword = '22';
-
-            if (password === validPassword) {
-                message.textContent = '';
-                content.style.display = 'block'; // İçeriği göster
-            } else {
-                 alert('Yanlış şifre! Lütfen tekrar deneyin.');
-                message.textContent = 'Şifre hatalı. Lütfen tekrar deneyin.';
-                message.style.color = 'orange';
-                content.style.display = 'none'; // İçeriği gizle
-            }
-        });
-    </script>
 
             <script>
         function login() {
+                        // Örnek şifre
+            const validPassword = '22';
             const password = document.getElementById('password').value;
             // Basit bir şifre kontrolü (örneğin "12345")
             if (password === '22') {
