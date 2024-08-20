@@ -100,7 +100,10 @@ Anlayışınız için teşekkür ederiz.
                 document.getElementById('loginSection').style.display = 'none'; // Giriş bölümünü gizle
                 document.getElementById('privateSection').classList.remove('hidden'); // Özel bölümü göster
             } else {
-                alert('Yanlış şifre! Lütfen tekrar deneyin.');
+                 alert('Yanlış şifre! Lütfen tekrar deneyin.');
+                message.textContent = 'Şifre hatalı. Lütfen tekrar deneyin.';
+                message.style.color = 'orange';
+                content.style.display = 'none'; // İçeriği gizle
             }
         }
     </script>
