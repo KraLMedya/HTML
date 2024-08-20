@@ -95,7 +95,9 @@ Anlayışınız için teşekkür ederiz.
             const validPassword = '22';
             const password = document.getElementById('password').value;
             // Basit bir şifre kontrolü (örneğin "12345")
-            if (password === '22') {
+            if (password === validPassword) {
+                                message.textContent = '';
+                content.style.display = 'block'; // İçeriği göster
                 document.getElementById('publicSection').style.display = 'none'; // Herkese açık bölümü gizle
                 document.getElementById('loginSection').style.display = 'none'; // Giriş bölümünü gizle
                 document.getElementById('privateSection').classList.remove('hidden'); // Özel bölümü göster
