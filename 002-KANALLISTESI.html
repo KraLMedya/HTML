@@ -1,8 +1,101 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8">
-    <title>KANAL LİSTESİ - KRAL MEDYA</title></head><body><body bgcolor=black>
-
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>KANAL LİSTESİ - KRAL MEDYA</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .column {
+            width: 45%;
+            padding: 20px;
+            box-shadow: 0 0 5px rgba(255, 165, 0, 0.5);
+        }
+        h1, h2 {
+            color: orange;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
 <body>
+<center>
+<div id="publicSection">
+    <h1 style="font-family: 'Arial Black', sans-serif; font-weight: bold;">TELİF HAKKI | SORUMLULUK REDDİ</h1>
+    <p><font color=DodgerBlue>Uygulama bünyesinde TELİF HAKKINA aykırı olabilecek hiçbir içeriğe yer vermiyor, barındırmıyor, desteklemiyor ve teşvik etmiyoruz.</p>
+    <p>Bu alanda tüm Kullanıcılar tamamiyle kendi hür iradeleriyle, kendileri işlem gerçekleştirmekte ve bu eylem için HİÇ KİMSE teşvik edilmemektedir.</p>
+    <p>Her şeye rağmen, TELİF HAKKINIZA istemdışı ve kasıtlı olmadan aykırı durabilecek bir içerikle karşılaşırsanız bize lütfen bildiriniz. Datalarımızdan maksimum 72 saat içerisinde kaldırılacaktır.</p>
+    <p>Anlayışınız için teşekkür ederiz.</p></font>
 
+    <h2 style="font-family: 'Arial Black', sans-serif; font-weight: bold;">LÜTFEN SİZE SAĞLANAN ŞİFREYİ GİRİN</h2>
+    <form id="passwordForm">
+        <input type="password" id="password" name="password" required>
+        <!--  <button type="submit">Giriş Yap</button>  -->
+    </form>
+    <div id="message"></div>
+</div>
+</center>
+<div id="content" class="hidden">
+<center>
+    <h2 style="font-family: 'Arial Black', sans-serif; color: DodgerBlue; font-weight: bold;">Kanal Listesine Hoş geldiniz!</h2>
+    <h1 style="font-family: 'Arial Black', sans-serif; font-weight: bold;">TV KANALLARI GENEL</h1>
+    </center>
+    <div class="container">
+        <div class="column">
+<center>
+            <h2 style="font-family: 'Arial Black', sans-serif; font-weight: bold;">KANAL ADI</h2>
+    </center>
+            <ol>
+    <h3 style="font-family: 'Arial Black', sans-serif; color: DodgerBlue; font-weight: bold;">
+                <li>SHOW TV</li>
+                <li>KANAL D</li>
+                <li>STAR TV</li> </h3>
+            </ol>
+        </div>
         
+        <div class="column">
+<center>
+            <h2 style="font-family: 'Arial Black', sans-serif; font-weight: bold;">UYGULAMADA NASIL YAZILACAĞI</h2>
+</center>
+            <ol>
+    <h3 style="font-family: 'Arial Black', sans-serif; color: DodgerBlue; font-weight: bold;">
+                <li>SHOW1</li>
+                <li>KANALD1</li>
+                <li>STAR1</li> </h3>
+            </ol>
+        </div>
+    </div>
+</div>
+<script>
+    const form = document.getElementById('passwordForm');
+    const message = document.getElementById('message');
+    const content = document.getElementById('content');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const password = document.getElementById('password').value;
+        const validPassword = '22';
+
+        if (password === validPassword) {
+            message.textContent = '';
+            content.classList.remove('hidden'); // İçeriği göster
+            document.getElementById('publicSection').style.display = 'none'; // Herkese açık bölümü gizle
+        } else {
+            alert('Yanlış şifre! Lütfen tekrar deneyin.');
+            message.textContent = 'Şifre hatalı. Lütfen tekrar deneyin.';
+            message.style.color = 'orange';
+        }
+    });
+</script>
+
 </body>
 </html>
