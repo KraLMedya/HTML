@@ -31,14 +31,15 @@
     <h5 style="font-family: 'Arial Black', sans-serif; font-weight: bold;"><font color=orange>TELİF HAKKI | SORUMLULUK REDDİ</font></h5>
     <p><h6 style="font-family: 'Arial Black', sans-serif; font-weight: bold;">
 <font color=DodgerBlue>Uygulama bünyesinde TELİF HAKKINA aykırı olabilecek hiçbir içeriğe yer vermiyor, barındırmıyor, desteklemiyor ve teşvik etmiyoruz.</p>
-    <p>TELİF HAKKIYLA ilgili endişe ve sorularınız varsa bize lütfen bildirin.</p></font></h6><br><br>
+    <p>TELİF HAKKIYLA ilgili endişe ve sorularınız varsa bize lütfen bildirin.</p></font></h6><br>
     <h5 style="font-family: 'Arial Black', sans-serif; font-weight: bold;"><font color=orange>LÜTFEN SİZE SAĞLANAN ŞİFREYİ GİRİN</font></h5><form id="passwordForm">
     <input type="password" id="password" name="password"
            style="background-color: DodgerBlue; color: white;" required>
     <!-- <button type="submit">Giriş Yap</button> -->
+<br><br>
 </form>
 
-    <div id="message"></div>
+    <div id="message"></div> <!-- Mesaj buraya yerleştirildi -->
 </div>
 </center>
 <div id="content" class="hidden">
@@ -83,7 +84,7 @@
         } else {
             alert('Yanlış şifre! Lütfen tekrar deneyin.');
             message.textContent = 'Şifre hatalı. Lütfen tekrar deneyin.';
-            message.style.color = 'orange';
+            message.style.color = 'green';
         }
     });
 </script>
