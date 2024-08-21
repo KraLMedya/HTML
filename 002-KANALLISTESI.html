@@ -82,8 +82,8 @@
             content.classList.remove('hidden'); // İçeriği göster
             document.getElementById('publicSection').style.display = 'none'; // Herkese açık bölümü gizle
         } else {
-            alert('Yanlış şifre! Lütfen tekrar deneyin.');
-            message.textContent = 'Şifre HATALI. Tekrar Deneyin !';
+            alert('Şifre HATALI. Tekrar Deneyin !');
+                message.innerHTML = '<strong>Şifre HATALI. Tekrar Deneyin !</strong>'; // Kalın yazı için <strong> etiketi
             message.style.color = '#00ff00';
         }
     });
