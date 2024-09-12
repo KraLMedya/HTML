@@ -1,7 +1,28 @@
-<body bgcolor=black>
-<meta charset="utf-8">
-  <div align="center">
-<span style="color:DodgerBlue">
-<h1 style="font-size:92%; font-family:arial">
-Kral POP Radyo " Türkçe POP 'un Kral 'ı "<br><br>
-<script>var playerKey = "ef59fe27bce7aec591830c66d017874b";</script><div align="center"><div radyotelekom="radyoplayer-v1"><script type="application/javascript" src="//player.web.tr/players/v1/player.js?v=1.0" charset="UTF-8"></script></div>
+<body bgcolor="black">
+    <meta charset="utf-8">
+    <div align="center" style="text-align: center;">
+        <span style="color:DodgerBlue;">
+            <h1 style="font-size:92%; font-family:arial; margin: 0;">Kral POP Radyo</h1>
+            <br><br>
+
+            <script>
+                var playerKey = "ef59fe27bce7aec591830c66d017874b";
+                document.getElementById('playButton').onclick = function() {
+                    var audioElement = document.querySelector('audio');
+                    if (audioElement) {
+                        audioElement.play().then(function() {
+                            console.log("Radyo çalmaya başladı.");
+                        }).catch(function(error) {
+                            console.log("Otomatik oynatma engellendi:", error);
+                        });
+                    }
+                };
+            </script>
+            <div align="center" style="display: inline-block;">
+                <div radyotelekom="radyoplayer-v1">
+                    <script type="application/javascript" src="//player.web.tr/players/v1/player.js?v=1.0" charset="UTF-8"></script>
+                </div>
+            </div>
+        </span>
+    </div>
+</body>
