@@ -5,56 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hesap Silme Talebi - Doksanlar Radyo Dinle | 90'lar</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 40px auto; padding: 20px; background-color: #f4f4f4; }
-        .container { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        h1 { color: #FF9800; text-align: center; }
-        p { margin-bottom: 15px; }
-        .info-box { background: #fff3e0; border-left: 5px solid #FF9800; padding: 15px; margin: 20px 0; font-size: 14px; }
-        .form-group { margin-bottom: 15px; }
-        label { display: block; font-weight: bold; margin-bottom: 5px; }
-        input[type="email"], input[type="text"], textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
-        button { background: #FF9800; color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; width: 100%; font-size: 16px; font-weight: bold; }
-        button:hover { background: #e68a00; }
-        .footer { text-align: center; margin-top: 20px; font-size: 12px; color: #777; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 40px auto; padding: 20px; background-color: #f8f9fa; }
+        .container { background: white; padding: 35px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        h1 { color: #E65100; text-align: center; margin-bottom: 25px; font-size: 24px; }
+        p { margin-bottom: 15px; font-size: 15px; }
+        .info-box { background: #fff3e0; border-left: 5px solid #FF9800; padding: 20px; margin: 25px 0; border-radius: 4px; }
+        .info-box strong { color: #E65100; display: block; margin-bottom: 8px; }
+        .contact-method { background: #f1f3f4; padding: 20px; border-radius: 10px; text-align: center; margin-top: 25px; }
+        .email-link { display: inline-block; background: #FF9800; color: white; text-decoration: none; padding: 14px 25px; border-radius: 8px; font-weight: bold; margin-top: 10px; transition: background 0.3s; }
+        .email-link:hover { background: #EF6C00; }
+        .manual-email { display: block; margin-top: 15px; font-family: monospace; color: #555; font-size: 14px; }
+        .footer { text-align: center; margin-top: 30px; font-size: 12px; color: #888; }
+        .warning-text { font-size: 13px; color: #d32f2f; font-weight: 500; margin-top: 20px; text-align: center; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <h1>Doksanlar Radyo Dinle</h1>
-    <p>Hesabınızı ve hesabınızla ilişkili verileri silmek istiyorsanız lütfen aşağıdaki formu doldurunuz.</p>
+    <p>Uygulamamızdaki hesabınızı ve bu hesaba bağlı tüm verilerinizin silinmesini talep edebilirsiniz.</p>
 
     <div class="info-box">
-        <strong>Hangi veriler silinecek?</strong><br>
-        Hesap silme işlemi tamamlandığında; adınız, e-posta adresiniz, profil bilgileriniz ve uygulama içindeki tüm kişiselleştirilmiş verileriniz (favori radyolar vb.) kalıcı olarak silinecektir.
+        <strong>Hangi Verileriniz Silinecek?</strong>
+        Hesap silme işleminiz onaylandığında aşağıdaki veriler sistemimizden kalıcı olarak temizlenir:
+        <ul style="margin-top: 10px; padding-left: 20px;">
+            <li>Adınız ve Soyadınız</li>
+            <li>E-posta adresiniz</li>
+            <li>Profil bilgileriniz</li>
+            <li>Favori radyo listeleriniz ve uygulama içi tercihleriniz</li>
+        </ul>
     </div>
 
-    <form action="mailto:FerdyyFON@gmail.com" method="post" enctype="text/plain">
-        <div class="form-group">
-            <label for="name">Adınız Soyadınız:</label>
-            <input type="text" id="name" name="Ad Soyad" required placeholder="Uygulamadaki isminiz">
-        </div>
+    <div class="contact-method">
+        <p>Silme talebinizi iletmek için aşağıdaki butona tıklayarak bize bir e-posta gönderin:</p>
+        
+        <a href="mailto:FerdyyFON@gmail.com?subject=Hesap Silme Talebi - Doksanlar Radyo&body=Merhaba, Doksanlar Radyo uygulamasındaki hesabımın silinmesini istiyorum.%0D%0A%0D%0AKayıtlı E-posta Adresim: %0D%0AAdınız Soyadınız: " class="email-link">
+            Talebi E-Posta ile Gönder
+        </a>
 
-        <div class="form-group">
-            <label for="email">E-posta Adresiniz:</label>
-            <input type="email" id="email" name="Email" required placeholder="Kaydolduğunuz e-posta">
-        </div>
+        <p class="manual-email">Veya manuel olarak yazın:<br><strong>FerdyyFON@gmail.com</strong></p>
+    </div>
 
-        <div class="form-group">
-            <label for="reason">Silme Nedeni (Opsiyonel):</label>
-            <textarea id="reason" name="Mesaj" rows="3"></textarea>
-        </div>
-
-        <button type="submit">Hesap Silme Talebini Gönder</button>
-    </form>
-
-    <p style="font-size: 13px; color: #d32f2f; margin-top: 15px;">
-        *Talebiniz bize ulaştıktan sonra 7 iş günü içerisinde hesabınız kalıcı olarak silinecektir.
+    <p class="warning-text">
+        * Talebiniz ulaştıktan sonra kimlik doğrulama amacıyla tarafınıza dönüş yapılabilir. İşlem 7 iş günü içinde tamamlanır.
     </p>
 </div>
 
 <div class="footer">
-    © 2025 Doksanlar Radyo Dinle | 90'lar - Veri Güvenliği Politikası
+    © 2025 Doksanlar Radyo Dinle | 90'lar <br>
+    Google Play Veri Güvenliği Politikası Uyum Sayfası
 </div>
 
 </body>
