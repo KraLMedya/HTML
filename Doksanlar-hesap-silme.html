@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hesap Silme Talebi - Doksanlar Radyo Dinle | 90'lar</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 40px auto; padding: 20px; background-color: #f4f4f4; }
+        .container { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        h1 { color: #FF9800; text-align: center; }
+        p { margin-bottom: 15px; }
+        .info-box { background: #fff3e0; border-left: 5px solid #FF9800; padding: 15px; margin: 20px 0; font-size: 14px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; }
+        input[type="email"], input[type="text"], textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
+        button { background: #FF9800; color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; width: 100%; font-size: 16px; font-weight: bold; }
+        button:hover { background: #e68a00; }
+        .footer { text-align: center; margin-top: 20px; font-size: 12px; color: #777; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Doksanlar Radyo Dinle</h1>
+    <p>Hesabınızı ve hesabınızla ilişkili verileri silmek istiyorsanız lütfen aşağıdaki formu doldurunuz.</p>
+
+    <div class="info-box">
+        <strong>Hangi veriler silinecek?</strong><br>
+        Hesap silme işlemi tamamlandığında; adınız, e-posta adresiniz, profil bilgileriniz ve uygulama içindeki tüm kişiselleştirilmiş verileriniz (favori radyolar vb.) kalıcı olarak silinecektir.
+    </div>
+
+    <form action="mailto:FerdyyFON@gmail.com" method="post" enctype="text/plain">
+        <div class="form-group">
+            <label for="name">Adınız Soyadınız:</label>
+            <input type="text" id="name" name="Ad Soyad" required placeholder="Uygulamadaki isminiz">
+        </div>
+
+        <div class="form-group">
+            <label for="email">E-posta Adresiniz:</label>
+            <input type="email" id="email" name="Email" required placeholder="Kaydolduğunuz e-posta">
+        </div>
+
+        <div class="form-group">
+            <label for="reason">Silme Nedeni (Opsiyonel):</label>
+            <textarea id="reason" name="Mesaj" rows="3"></textarea>
+        </div>
+
+        <button type="submit">Hesap Silme Talebini Gönder</button>
+    </form>
+
+    <p style="font-size: 13px; color: #d32f2f; margin-top: 15px;">
+        *Talebiniz bize ulaştıktan sonra 7 iş günü içerisinde hesabınız kalıcı olarak silinecektir.
+    </p>
+</div>
+
+<div class="footer">
+    © 2025 Doksanlar Radyo Dinle | 90'lar - Veri Güvenliği Politikası
+</div>
+
+</body>
+</html>
