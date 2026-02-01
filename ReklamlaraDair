@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reklamlar Nasıl İşler? | Ferdyy Project</title>
+    <style>
+        :root {
+            --primary-color: #f39c12; /* Kral Gold */
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-color: #e0e0e0;
+            --accent-color: #d35400;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-top: 5px solid var(--primary-color);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            text-align: justify;
+        }
+
+        .highlight {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .quote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 15px;
+            font-style: italic;
+            background: rgba(243, 156, 18, 0.05);
+            margin: 25px 0;
+        }
+
+        .question {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 30px;
+        }
+
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            text-align: center;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* Mobil Optimizasyon */
+        @media (max-width: 480px) {
+            .container {
+                width: 95%;
+                margin: 20px auto;
+                padding: 15px;
+            }
+            h1 { font-size: 1.5rem; }
+            p { font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Reklamlar Nasıl İşler?</h1>
+
+    <p>Uzun zamandır 1 dakika ile 3 dakika aralığında değişen Tam Ekran gösterilen reklamların zaman aralığını <span class="highlight">5 dakikaya çıkardık!</span></p>
+
+    <p>Artık uygulamanızda gezinirken tam ekran reklamlarla karşılaşma süreciniz 5 dakikada bire yükseltilmiştir ve böylece daha da konforlu bir kullanıma erişmeniz amaçlanmıştır.</p>
+
+    <div class="quote">
+        Her ne kadar, "asılsız" iddialar ile, reklam yoğunluğundan şikayetler alıyor ve bu asılsız ve "kasıtlı" bildirimlerin, emeklerimizi eritme ve yok etmeye yönelik olduğundan emin olsak da her daim konforu uygulamalarınızda çalışma prensiplerimiz ve ilkelerimiz listesinde en başta tutuyoruz.
+    </div>
+
+    <p>Projelerimizde ürettiğimiz tüm Mobil Uygulamalarını kullanan insanların reklam tarlasına dönmüş manzaralarla mağdur olması en başta bizim hoşumuza gitmeyeceği için bunun önüne biz yolun en başında, daha adım atmaya başlamadan önce oturup, <span class="highlight">"hele bir çay içelim, öyle başlayalım; insanlara en kaliteli hizmeti, en konforlu halde nasıl sunarız"</span> diyerek başladık.</p>
+
+    <p class="question">Çünkü;</p>
+    <p>Bizler de, tıpkı "Sizler" gibi, beklentilerimiz karşılanmadığında bir uygulamayı elimizin tersiyle itip hayatımızdan çıkarıyoruz. Reklam projenin ana gelir kaynağıdır fakat insanları telefondan soğutacak seviyeye getirmemek gerekir. <span class="highlight">İnsanlar sizi gerçekten ödüllendirmeli.</span></p>
+
+    <p class="question">Nasıl mı?</p>
+    <p>Sizi mutlaka tavsiye ederler, 5 yıldızlı puanlar sunarlar ve projeniz bünyesinde ücretli alanlar var ise Size maddi destek de sağlayarak katkıda bulunurlar. Bu güven, asla durduk yere elde edilen bir beğeni değildir.</p>
+
+    <p>Sözü bu denli uzatmamızın nedeni, bir nevi dostça sohbet edercesine sizlere reklamlara dayalı işleyişler hakkında bilgilendirme sunmayı amaçlamaktır. </p>
+
+    <p>Sırf emeği çökertmek amaçlı güdümlü ve kasıtlı tutumlar sergileyenleri görmek bizi derinden yaralıyor. Biz apaçık ve en net haliyle ekmeğimizin derdindeyiz. Hiçbir kullanıcımızın mağdur olabileceği <span class="highlight">küçük hesaplara asla girmiyoruz.</span></p>
+
+    <p class="question">Güncellemeler Hakkında</p>
+    <p>Genellikle 3-6 ay gibi süreçlerde uygulamalarınızı yeni sürümlere yükseltirken sorunları gidermeye çalışıyoruz. Bu nedenle ara sıra uygulamanızın yeni bir sürümü var mı diye Google Play sayfamıza bakmanızı rica ederiz.</p>
+
+    <div class="footer">
+        Buraya kadar vakit ayırıp yazının tamamını okuyan tüm Güzel İnsanlara Saygı ve Sevgilerimizle.<br><br>
+        Sağlık ve Huzurla Kalınız.
+    </div>
+</div>
+
+</body>
+</html>
