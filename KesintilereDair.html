@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bağlantı Bilgilendirme | Destek</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-color: #e0e0e0;
+            --accent-color: #00adb5;
+            --secondary-text: #b0b0b0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            text-align: center;
+            border: 1px solid #333;
+        }
+
+        .icon {
+            font-size: 50px;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        p {
+            line-height: 1.6;
+            color: var(--secondary-text);
+            font-size: 16px;
+        }
+
+        .info-box {
+            background-color: rgba(0, 173, 181, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin: 25px 0;
+            text-align: left;
+            border-radius: 4px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.2s, background-color 0.2s;
+            margin-top: 10px;
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #555;
+        }
+
+        /* Mobil Optimizasyon */
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="icon">🌐</div>
+    <h2>Bağlantı Bilgilendirmesi</h2>
+    
+    <p>Türkiye İnternet Şebekeleri kaynaklı, zaman zaman Türkiye dışı lokasyon merkezli bağlantılarda erişim sorunları yaşanabilmektedir.</p>
+
+    <div class="info-box">
+        <strong>Çözüm Önerisi:</strong><br>
+        Böyle bir durumda internet servis sağlayıcınızı arayarak veya modeminizin üzerindeki düğmeyi kullanarak <strong>modeminizi resetlemeniz</strong>, IP adresinizi yenileyerek sorunu bireysel olarak gidermenizi sağlayacaktır.
+    </div>
+
+    <p>Sorununuz devam ederse lütfen teknik ekibimizle iletişime geçin.</p>
+
+    <a href="#" class="btn" onclick="window.location.reload();">Bağlantıyı Tekrar Dene</a>
+
+    <footer>
+        © 2026 Sistem Destek Birimi
+    </footer>
+</div>
+
+</body>
+</html>
