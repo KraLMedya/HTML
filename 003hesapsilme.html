@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KRAL Mini - Hesap ve Veri Silme Talebi</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 24px 16px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            max-width: 620px;
+            width: 100%;
+            padding: 44px 38px;
+            text-align: center;
+        }
+
+        .app-title {
+            color: #d32f2f;
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+        }
+
+        .intro-text {
+            font-size: 14.5px;
+            line-height: 1.6;
+            color: #4f5660;
+            margin-bottom: 28px;
+            text-align: left;
+        }
+
+        .info-box {
+            background-color: #fdf5f5;
+            border-left: 4px solid #d32f2f;
+            border-radius: 6px;
+            padding: 20px 22px;
+            margin-bottom: 28px;
+            text-align: left;
+        }
+
+        .info-title {
+            color: #c62828;
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .info-text {
+            font-size: 13.5px;
+            color: #4f5660;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .data-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .data-list li {
+            position: relative;
+            padding-left: 18px;
+            font-size: 13.5px;
+            color: #374151;
+            line-height: 1.65;
+            margin-bottom: 4px;
+        }
+
+        .data-list li::before {
+            content: "•";
+            position: absolute;
+            left: 4px;
+            color: #374151;
+            font-weight: bold;
+        }
+
+        .action-box {
+            background-color: #f4f6f8;
+            border-radius: 10px;
+            padding: 26px 20px;
+            margin-bottom: 22px;
+            text-align: center;
+        }
+
+        .action-text {
+            font-size: 13.5px;
+            color: #4b5563;
+            line-height: 1.5;
+            margin-bottom: 18px;
+        }
+
+        .btn-send {
+            display: inline-block;
+            background-color: #d32f2f;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 13px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 6px rgba(211, 47, 47, 0.25);
+        }
+
+        .btn-send:hover {
+            background-color: #b71c1c;
+        }
+
+        .btn-send:active {
+            transform: scale(0.98);
+        }
+
+        .notice-text {
+            font-size: 12px;
+            color: #6b7280;
+            line-height: 1.5;
+            font-style: italic;
+        }
+
+        footer {
+            margin-top: 24px;
+            text-align: center;
+            font-size: 12px;
+            color: #9ca3af;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 28px 20px;
+            }
+            .app-title {
+                font-size: 22px;
+            }
+            .intro-text, .info-text, .data-list li, .action-text {
+                font-size: 13px;
+            }
+            .btn-send {
+                width: 100%;
+                padding: 14px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1 class="app-title">KRAL Mini</h1>
+        
+        <p class="intro-text">
+            KRAL Mini uygulaması üzerindeki hesabınızın kapatılmasını ve ilişkili tüm kişisel verilerinizin sistemlerimizden temizlenmesini talep edebilirsiniz.
+        </p>
+
+        <div class="info-box">
+            <div class="info-title">Hangi Verileriniz Silinecek?</div>
+            <p class="info-text">Silme talebiniz onaylandığında aşağıdaki veriler kalıcı olarak imha edilir:</p>
+            <ul class="data-list">
+                <li>Google profilinizle yaptığınız girişte oluşan tüm veriler</li>
+                <li>Uygulama içerisinde kullandığınız tüm etkileşimler</li>
+                <li>E-posta adresiniz</li>
+                <li>Profil fotoğrafınız ve Google profil adınız</li>
+            </ul>
+        </div>
+
+        <div class="action-box">
+            <p class="action-text">
+                Hesap ve veri silme talebinizi hızlıca iletmek için aşağıdaki butonu kullanabilirsiniz:
+            </p>
+            <!-- FerdyyFON@gmail.com projedeki CONFIG.SUPPORT_EMAIL adresidir -->
+            <a href="mailto:FerdyyFON@gmail.com?subject=KRAL%20Mini%20Hesap%20ve%20Veri%20Silme%20Talebi&body=Merhaba%2C%0A%0AKRAL%20Mini%20(com.mini.kralfm)%20uygulamas%C4%B1nda%20kullanm%C4%B1%C5%9F%20oldu%C4%9Fum%20hesab%C4%B1m%C4%B1n%20ve%20bu%20hesaba%20ba%C4%9Fl%C4%B1%20t%C3%BCm%20ki%C5%9Fisel%20verilerimin%20(profil%20bilgileri%2C%20favoriler%2C%20sosyal%20i%C3%A7erikler)%20sunucular%C4%B1n%C4%B1zdan%20kal%C4%B1c%C4%B1%20olarak%20silinmesini%20talep%20ediyorum.%0A%0AKay%C4%B1tl%C4%B1%20E-Posta%20Adresim%3A%20%0AGoogle%20Profil%20Ad%C4%B1m%3A%20%0A%0AGere%C4%9Finin%20yap%C4%B1lmas%C4%B1n%C4%B1%20arz%20ederim." class="btn-send">
+                Talebi E-Posta ile Gönder
+            </a>
+        </div>
+
+        <p class="notice-text">
+            * İşleminiz güvenliğiniz için manuel doğrulamadan geçebilir. Silme işlemi talebiniz ulaştıktan sonra 7 iş günü içinde tamamlanır.
+        </p>
+    </div>
+
+    <footer>
+        © 2026 KRAL Mini<br>
+        Veri Güvenliği ve Kullanıcı Hakları Bilgilendirme Sayfası
+    </footer>
+
+</body>
+</html>
