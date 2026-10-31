@@ -336,27 +336,31 @@
 </div>
 
 <script>
-    // 🌟 HER CİHAZIN YALNIZCA 1 DEFA SAYILDIĞI BENZERSİZ SAYAÇ SİSTEMİ
-    (function initUniqueCounter() {
-        const STORAGE_KEY = 'ferdyy_letter_read_v2';
-        const BASE_COUNT = 0; // Başlangıç tabanı
-
-        // Cihaz daha önce okumuş mu kontrolü
-        let hasReadBefore = localStorage.getItem(STORAGE_KEY);
-        let storedTotalCount = parseInt(localStorage.getItem('ferdyy_total_count_v2')) || BASE_COUNT;
-
-        if (!hasReadBefore) {
-            // İlk kez okuyor: Cihazı damgala ve sayacı 1 artır
-            storedTotalCount += 1;
-            localStorage.setItem(STORAGE_KEY, 'read_' + new Date().getTime());
-            localStorage.setItem('ferdyy_total_count_v2', storedTotalCount);
-        }
-
-        // Sayacı ekranda şık şekilde göster
+    // 🌟 DÜNYA GENELİ ORTAK GERÇEK SAYAÇ (1 KİŞİ = 1 SAYIM)
+    (function initGlobalCounter() {
+        const STORAGE_KEY = 'ferdyy_letter_has_read_v1';
         const displayElem = document.getElementById('readCountDisplay');
-        if (displayElem) {
-            displayElem.textContent = storedTotalCount.toLocaleString('tr-TR');
+        
+        let hasReadBefore = localStorage.getItem(STORAGE_KEY);
+        let apiUrl = 'https://ferdyy.com/DATA/KRALMEDYAFM/GayriResmiSAYAC.php';
+
+        // Bu cihaz sayfayı ilk kez açıyorsa sunucuya +1 yazdır ve cihazı damgala
+        if (!hasReadBefore) {
+            apiUrl += '?hit=1';
+            localStorage.setItem(STORAGE_KEY, 'yes');
         }
+
+        // Sunucudan gerçek ortak sayıyı çek ve ekrana yaz
+        fetch(apiUrl)
+            .then(res => res.json())
+            .then(data => {
+                if (displayElem && data.total) {
+                    displayElem.textContent = Number(data.total).toLocaleString('tr-TR');
+                }
+            })
+            .catch(() => {
+                if (displayElem) displayElem.textContent = "1";
+            });
     })();
 </script>
 
