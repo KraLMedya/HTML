@@ -338,23 +338,18 @@
 <script>
     // 🌟 HER CİHAZIN YALNIZCA 1 DEFA SAYILDIĞI BENZERSİZ SAYAÇ SİSTEMİ
     (function initUniqueCounter() {
-        const STORAGE_KEY = 'ferdyy_letter_read_fingerprint';
-        const BASE_COUNT = 0; // Başlangıç sayacı tabanı
+        const STORAGE_KEY = 'ferdyy_letter_read_v2';
+        const BASE_COUNT = 0; // Başlangıç tabanı
 
         // Cihaz daha önce okumuş mu kontrolü
         let hasReadBefore = localStorage.getItem(STORAGE_KEY);
-        let storedTotalCount = parseInt(localStorage.getItem('ferdyy_total_count_cache')) || BASE_COUNT;
+        let storedTotalCount = parseInt(localStorage.getItem('ferdyy_total_count_v2')) || BASE_COUNT;
 
         if (!hasReadBefore) {
             // İlk kez okuyor: Cihazı damgala ve sayacı 1 artır
             storedTotalCount += 1;
             localStorage.setItem(STORAGE_KEY, 'read_' + new Date().getTime());
-            localStorage.setItem('ferdyy_total_count_cache', storedTotalCount);
-            
-            // İleride sunucu bağlamak istersen fetch() çağrısı buraya yerleştirilir
-            /*
-            fetch('https://ferdyy.com/DATA/KRALMEDYAFM/counter.php?action=increment');
-            */
+            localStorage.setItem('ferdyy_total_count_v2', storedTotalCount);
         }
 
         // Sayacı ekranda şık şekilde göster
