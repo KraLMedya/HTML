@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Bir Geliştiricinin Perde Arkası | Ferdyy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #080b12;
+            --card-bg: #101624;
+            --accent-red: #ff2a55;
+            --accent-gold: #ffb703;
+            --accent-cyan: #00e5ff;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --border-glow: rgba(255, 42, 85, 0.25);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.8;
+            padding: 20px 14px 60px 14px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 680px;
+        }
+
+        /* 🌟 PARILTI VE KART TASARIMI */
+        .letter-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 28px 20px;
+            border: 1px solid #1e293b;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .letter-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-red), var(--accent-gold), var(--accent-cyan));
+        }
+
+        /* 🌟 BAŞLIKLAR */
+        .main-header {
+            text-align: center;
+            margin-bottom: 26px;
+        }
+
+        .badge-confession {
+            display: inline-block;
+            background: rgba(255, 42, 85, 0.15);
+            color: var(--accent-red);
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 6px 14px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 42, 85, 0.3);
+            margin-bottom: 12px;
+        }
+
+        .main-header h1 {
+            font-size: 22px;
+            font-weight: 900;
+            color: #ffffff;
+            line-height: 1.4;
+            font-family: 'Arial Black', sans-serif;
+        }
+
+        .section-title {
+            margin: 28px 0 12px 0;
+            font-size: 16px;
+            font-weight: 900;
+            color: var(--accent-cyan);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Arial Black', sans-serif;
+            letter-spacing: -0.3px;
+        }
+
+        /* 🌟 VURUCU METİN VE BLOKLAR */
+        p {
+            font-size: 14.5px;
+            margin-bottom: 16px;
+            color: #cbd5e1;
+            text-align: justify;
+        }
+
+        .highlight-red {
+            color: var(--accent-red);
+            font-weight: 800;
+            text-shadow: 0 0 12px rgba(255, 42, 85, 0.4);
+        }
+
+        .highlight-gold {
+            color: var(--accent-gold);
+            font-weight: 800;
+            text-shadow: 0 0 12px rgba(255, 183, 3, 0.3);
+        }
+
+        .highlight-cyan {
+            color: var(--accent-cyan);
+            font-weight: 800;
+        }
+
+        /* 🌟 SORU & İSYAN KUTULARI */
+        .quote-box {
+            background: rgba(15, 23, 42, 0.85);
+            border-left: 3.5px solid var(--accent-gold);
+            padding: 14px 16px;
+            border-radius: 0 14px 14px 0;
+            margin: 20px 0;
+            font-style: italic;
+            font-size: 13.5px;
+            color: #f1f5f9;
+        }
+
+        .quote-box ul {
+            list-style: none;
+            margin-top: 6px;
+        }
+
+        .quote-box li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .quote-box li::before {
+            content: '❓';
+            position: absolute;
+            left: 0;
+            font-size: 12px;
+        }
+
+        /* 🌟 VURUCU UYARI BLOKU */
+        .callout-box {
+            background: linear-gradient(135deg, rgba(255, 42, 85, 0.12), rgba(15, 23, 42, 0.95));
+            border: 1px solid rgba(255, 42, 85, 0.35);
+            border-radius: 16px;
+            padding: 18px 16px;
+            margin: 24px 0;
+        }
+
+        .callout-title {
+            color: var(--accent-red);
+            font-size: 14px;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* 🌟 İMZA ALANI */
+        .signature-area {
+            margin-top: 36px;
+            padding-top: 20px;
+            border-top: 1px solid #1e293b;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .author-name {
+            font-size: 18px;
+            font-weight: 900;
+            color: #ffffff;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 0.5px;
+        }
+
+        .author-title {
+            font-size: 11.5px;
+            color: var(--text-muted);
+        }
+
+        /* 🌟 1 KİŞİ = 1 SAYIM OKUNDU SAYAÇ KARTI */
+        .counter-pill {
+            background: #090d16;
+            border: 1px solid #1e2638;
+            padding: 10px 18px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: inset 0 2px 6px rgba(0,0,0,0.6);
+        }
+
+        .counter-dot {
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse 1.5s infinite;
+        }
+
+        .counter-text {
+            font-size: 11.5px;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+
+        .counter-number {
+            color: #ffffff;
+            font-weight: 900;
+            font-family: 'Arial Black', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.7; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="letter-card">
+        
+        <!-- ÜST BAŞLIK -->
+        <div class="main-header">
+            <span class="badge-confession">Görünmeyen Perde Arkası</span>
+            <h1>Aylar Süren Emeğin, Hastalığın ve İki Paket Sigara Parasının Hikayesi</h1>
+        </div>
+
+        <!-- 1. BÖLÜM: TÜKENİŞ VE GİZLENEN GERÇEK -->
+        <div class="section-title">🥀 Uykusuz Geceler ve Bir Mücadele</div>
+        <p>
+            Aylar sürdü... Ne gece uykumu tam alabildim, ne gündüz huzurla uyuyabildim. Gözlerim tükenme ve bozulma noktasına geldi bunca çabanın ve satır satır kodların sonunda.
+            Ayrıca, asla bir acındırma veya sığınma amacı gütmediğim ama hayatımın en acı gerçeği olan bir durumum var: <span class="highlight-red">Ben bir kanser hastasıyım.</span>
+        </p>
+        <p>
+            Bütün bu didinmem yalnızca bu radyo uygulaması için değil; tüm projelerimin toplam kazancı <span class="highlight-gold">günlük 2 paket sigara parasını dahi bulmayan</span> bir ekmek kavgasıydı. En azından sağlığım için ilaçlarımı alabilmek, kimseye muhtaç olmadan biraz olsun geçimimi temin edebilmek için çabaladım, yıprandım, kendimi üzdüm...
+            Ve en çok da; şeker, tansiyon ve kalp hastası olan <span class="highlight-cyan">yaşlı anacığımı üzdüm...</span>
+        </p>
+        <p>
+            Doğal olarak o yaşlı anacığım teknolojiden anlamaz; benim gece gündüz bilgisayar başında uyumadan, aylarca ve geriye dönük yıllarca verdiğim bu amansız hayat mücadelesini idrak etmesi imkansızdı. Beni sadece ekranda oyun oynuyor sanarak kahroldu, o da benimle birlikte günden güne eridi...
+        </p>
+
+        <!-- 2. BÖLÜM: VİCDAN SORGUSU -->
+        <div class="section-title">⚖️ Sonuç Ne mi Peki?</div>
+        <div class="quote-box">
+            Hiç düşündünüz mü:
+            <ul>
+                <li>Bu işin arkasındakiler trilyonlarca para mı kazanıyor?</li>
+                <li>Bu işin arkasındakiler bireysel mi takılıyor, hasta mı, yatağa mı bağlı?</li>
+                <li>Bu işin arkasındaki insan ekmek yemesin mi; gece gündüz uyku yüzü görmeden sefil mi yaşasın?</li>
+                <li>Bunca zahmete karşılık bir nebze olsun yüzünü güldürecek bir teşekkür hak etmiyor mu?</li>
+            </ul>
+        </div>
+
+        <!-- 3. BÖLÜM: 5 YILDIZIN ÇOK GÖRÜLMESİ VE HAKSIZ LİNÇ -->
+        <div class="section-title">💔 Bir Beş Yıldızın Çok Görülmesi</div>
+        <p>
+            Aylarca çırpına çırpına ricalarda bulunduğum o indirme sayfalarında, ne içten bir beş yıldızı alabildim emeklerimize ne de yapıcı, hoş bir kelam...
+            Sizler <span class="highlight-gold">TEK SEFERLİK, sadece bir iki dakikanızı ayırıp</span> bunca emeğe bir güzel yorumu, bir 5 yıldızı çok gördünüz. <em>"Aman canım bana ne, bir dahaki seneye belki yaparım"</em> dediniz, ertelediniz durdunuz...
+        </p>
+        <p>
+            Peki sonuç ne oldu? Benim dilimden düşürmediğim, her satırına titrediğim <strong>"UYGULAMANIZ"</strong> dediğim bu esere; <span class="highlight-red">SİZLERİN YERİNE</span>, uygulamayı 1 dakika bile dinlemeyen insanlar gelip hiç hak etmediği halde <strong>1 YILDIZI</strong> bastılar. Üzerine bir de işe yaramaz damgası vurdular.
+        </p>
+        <p>
+            Sırf ne için? Sanki ben keyfimden, kasten yapmışım gibi sunulan reklam yoğunluğu bahaneleriyle... Hatta daha da içler acısı ki, uygulamayla uzaktan yakından alakası olmayan art niyetli insanlar gelip oralara haksızca karalamalar yazdı.
+        </p>
+
+        <!-- 4. BÖLÜM: ÇAĞRI VE GÜNCELLEME NOTU -->
+        <div class="callout-box">
+            <div class="callout-title">⚠️ Önemli Bir İstirham ve Gerçek</div>
+            <p style="margin-bottom: 8px;">
+                Sağ olun güzel insanlar, ne diyebilirim ki? Artık bu eseri buralara getirene dek yüzbinlerce satır kodun başında takatim tükendi.
+                Sizlerin zırt pırt reklamlarla boğulmaması için özellikle ve itina ile üzerine titreye titreye optimize ettiğim son sürüme geçmenizi rica ediyorum.
+            </p>
+            <p style="margin-bottom: 0;" class="highlight-gold">
+                Eski sürümlerin altyapısını tek başıma ayakta tutacak gücüm kalmadı. Eski sürümlerde her geçişte karşınıza tam ekran reklam çıkacaktır. Bu konforu ve sıfır reklam rahatlığını yalnızca SON SÜRÜMDE optimize edebildim. Lütfen uygulamanızı güncelleyiniz.
+            </p>
+        </div>
+
+        <!-- 5. BÖLÜM: KABULLENİŞ VE VEDA -->
+        <div class="section-title">🕊️ Rızkın Sahibi Yalnızca Allah'tır</div>
+        <p>
+            Siz olsaydınız, günlük 2 paket sigara parası etmeyen bir kazanç için; <em>"Bu neyin azmi, neyin çılgınlığı, hiç mi canına acımıyorsun?"</em> demez miydiniz? Özellikle işin tüm perde arkasını öğrendiğiniz şu andan sonra?..
+        </p>
+        <p>
+            Her neyse... Amacım sizleri üzmek, kırmak asla değil; ben kırılırım sadece. Dünyanın dört bir yanından emeklerime uğrayan, sesimize kulak veren tüm insanları yine de çok seviyorum. Amacım sadece para olsaydı, zaten bunca çile çekilmezdi.
+        </p>
+        <p>
+            Artık Rabbimin lütfu keremiyle, takdir-i ilahisiyle yeni projelere Bismillah diyerek rızkımı helalinden aramaya devam edeceğim. <strong>Hak'tan gelene boynum kıldan incedir...</strong>
+        </p>
+
+        <!-- İMZA -->
+        <div class="signature-area">
+            <div>
+                <div class="author-name">Ferdyy</div>
+                <div class="author-title">Büyüklerimin ellerinden öper, küçüklerime sevgiler sunarım.</div>
+            </div>
+
+            <!-- 🌟 BENZERSİZ 1 KİŞİ = 1 SAYIM OKUNDU SAYAÇ KARTI -->
+            <div class="counter-pill">
+                <div class="counter-dot"></div>
+                <div class="counter-text">Okuyan Gönül Dostu: <span id="readCountDisplay" class="counter-number">...</span></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    // 🌟 HER CİHAZIN YALNIZCA 1 DEFA SAYILDIĞI BENZERSİZ SAYAÇ SİSTEMİ
+    (function initUniqueCounter() {
+        const STORAGE_KEY = 'ferdyy_letter_read_fingerprint';
+        const BASE_COUNT = 412; // Başlangıç sayacı tabanı
+
+        // Cihaz daha önce okumuş mu kontrolü
+        let hasReadBefore = localStorage.getItem(STORAGE_KEY);
+        let storedTotalCount = parseInt(localStorage.getItem('ferdyy_total_count_cache')) || BASE_COUNT;
+
+        if (!hasReadBefore) {
+            // İlk kez okuyor: Cihazı damgala ve sayacı 1 artır
+            storedTotalCount += 1;
+            localStorage.setItem(STORAGE_KEY, 'read_' + new Date().getTime());
+            localStorage.setItem('ferdyy_total_count_cache', storedTotalCount);
+            
+            // İleride sunucu bağlamak istersen fetch() çağrısı buraya yerleştirilir
+            /*
+            fetch('https://ferdyy.com/DATA/KRALMEDYAFM/counter.php?action=increment');
+            */
+        }
+
+        // Sayacı ekranda şık şekilde göster
+        const displayElem = document.getElementById('readCountDisplay');
+        if (displayElem) {
+            displayElem.textContent = storedTotalCount.toLocaleString('tr-TR');
+        }
+    })();
+</script>
+
+</body>
+</html>
