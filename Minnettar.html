@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>KRAL Medya - Versiyon 26 Yayında</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0b0f17;
+            --card-bg: rgba(20, 27, 41, 0.78);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --primary-accent: #f59e0b;
+            --secondary-accent: #38bdf8;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --badge-bg: rgba(245, 158, 11, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            padding: 40px 16px 60px 16px;
+            display: flex;
+            justify-content: center;
+            background-image:
+                radial-gradient(circle at 15% 10%, rgba(245, 158, 11, 0.08) 0%, transparent 45%),
+                radial-gradient(circle at 85% 90%, rgba(56, 189, 248, 0.06) 0%, transparent 45%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 740px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        /* 🌟 HERO / ÜST BAŞLIK ALANI */
+        .hero-card {
+            background: linear-gradient(135deg, rgba(28, 36, 54, 0.95) 0%, rgba(15, 20, 31, 0.98) 100%);
+            border: 1px solid rgba(245, 158, 11, 0.28);
+            border-radius: 24px;
+            padding: 38px 28px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary-accent), transparent);
+        }
+
+        .version-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--badge-bg);
+            color: var(--primary-accent);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+
+        .version-badge .pulse {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--primary-accent);
+            box-shadow: 0 0 10px var(--primary-accent);
+        }
+
+        .hero-title {
+            font-size: 1.95rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 14px;
+            background: linear-gradient(to right, #ffffff, #e2e8f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.35;
+        }
+
+        .hero-subtitle {
+            font-size: 0.98rem;
+            color: var(--text-muted);
+            max-width: 580px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* 🌟 İÇERİK KARTLARI */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 26px 28px;
+            backdrop-filter: blur(14px);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .card:hover {
+            border-color: rgba(255, 255, 255, 0.16);
+            transform: translateY(-2px);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+
+        .card-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+        }
+
+        .icon-gold { background: rgba(245, 158, 11, 0.15); color: var(--primary-accent); }
+        .icon-blue { background: rgba(56, 189, 248, 0.15); color: var(--secondary-accent); }
+        .icon-purple { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
+
+        .card-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.2px;
+        }
+
+        .card-body {
+            color: #cbd5e1;
+            font-size: 0.96rem;
+            line-height: 1.8;
+            font-weight: 400;
+            text-align: justify;
+        }
+
+        .highlight-quote {
+            border-left: 3.5px solid var(--primary-accent);
+            background: rgba(245, 158, 11, 0.05);
+            padding: 14px 18px;
+            border-radius: 0 14px 14px 0;
+            margin-top: 14px;
+            font-style: italic;
+            color: #f1f5f9;
+            font-size: 0.94rem;
+        }
+
+        /* 🌟 İMZA VE SAYAÇ KARTI ALANI */
+        .footer-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 24px 26px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .signature-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .signature {
+            font-size: 1.15rem;
+            font-weight: 700;
+            background: linear-gradient(120deg, #f59e0b, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 2px;
+        }
+
+        .slogan {
+            font-size: 0.86rem;
+            color: var(--text-muted);
+            letter-spacing: 0.3px;
+        }
+
+        /* 🌟 1 KİŞİ = 1 SAYIM CANLI OKUNDU SAYAÇ ROZETİ */
+        .counter-pill {
+            background: #090d16;
+            border: 1px solid #1e2638;
+            padding: 10px 18px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: inset 0 2px 6px rgba(0,0,0,0.6);
+        }
+
+        .counter-dot {
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #10b981;
+            animation: pulse-dot 1.5s infinite;
+        }
+
+        .counter-text {
+            font-size: 12px;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+
+        .counter-number {
+            color: #ffffff;
+            font-weight: 800;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        @keyframes pulse-dot {
+            0% { transform: scale(0.95); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.7; }
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 20px 12px 40px 12px; }
+            .hero-card { padding: 30px 18px; }
+            .hero-title { font-size: 1.55rem; }
+            .card { padding: 20px; }
+            .footer-card {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+            .signature-group { align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- ÜST BAŞLIK & ŞÜKRAN GİRİŞİ -->
+    <header class="hero-card">
+        <span class="version-badge">
+            <span class="pulse"></span> Sürüm 26.0 • Kararlı Yayın
+        </span>
+        <h1 class="hero-title">Birlikte Büyüyen Bir Aileye Sonsuz Teşekkürler</h1>
+        <p class="hero-subtitle">
+            İsimlerini tek tek bilmesek de, güncelleme süreçlerimiz boyunca en başından bugüne sabır ve anlayışla KRAL Medya'yı sahiplenen ve terk etmeyen herkese sonsuz şükranlarımızla...
+        </p>
+    </header>
+
+    <!-- 1. ALAN: GELİŞTİRME SÜRECİ & HASAT VAKTİ -->
+    <section class="card">
+        <div class="card-header">
+            <div class="card-icon icon-gold">🌱</div>
+            <h2 class="card-title">Emeğin Hasat Vakti Geldi</h2>
+        </div>
+        <div class="card-body">
+            Aralıkları bazen gün be gün kadar kısa olsa da işin mutfağında hummalı ve uykusuz emeklerin tohumlarının yer aldığı ekinlerin hasat vakti erdi ve o tohumlar artık yeşerdiler. Uzun süren ama şükür ki sonuna gelinen sorun giderme, yeni yeni özellikler dahil etme, hem koyu hem açık temada ve teknik tüm yapılarda, görsel iyileştirmeler ve kararlı tüm çalışmaların KRAL Medya'da sonuna geldik, Versiyon 26 ile...
+            <div class="highlight-quote">
+                Tepeden tırnağa, kusursuz ve en stabil Versiyon 26'yı keyifle kullanmanız temennimizle, sabrınız ve anlayışınız için ayrı ayrı teşekkür ederiz.
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. ALAN: REKLAM DENEYİMİ VE ŞEFFAFLIK -->
+    <section class="card">
+        <div class="card-header">
+            <div class="card-icon icon-blue">🎯</div>
+            <h2 class="card-title">Geri Bildirimleriniz ve Reklam Dengesi</h2>
+        </div>
+        <div class="card-body">
+            Zaman zaman test süreçlerinde özellikle reklam yoğunlukları kontrolden ister istemez çıkarken yaşanan arbede ve <em>"sürekli reklam mı olacak?"</em> tedirginliği gibi doğrudan sizlere yansıyan durumları biliyoruz ve bu teşekkür özellikle bunun için. Artık tümüyle her şeyin kontrol altına alındığı ve elbette reklamların da en olması gerektiği çizgilere çekilerek fazlasıyla esnetildiği Sürüm 26, aynı zamanda bizim de tatlı bir yorgunluk tatili molamızdır. :)
+        </div>
+    </section>
+
+    <!-- 3. ALAN: YENİ AİLE FERTLERİ & TOPLULUK -->
+    <section class="card">
+        <div class="card-header">
+            <div class="card-icon icon-purple">🤝</div>
+            <h2 class="card-title">Aramıza Hoş Geldiniz</h2>
+        </div>
+        <div class="card-body">
+            Aramıza yeni yeni katılan herkese hoş geldin diyor, en başından bugüne geride kalan süreçte bir aile çatısı altında uygulamasıyla burada bizlerle beraberliğini sürdüren herkese de en içten minnettarlığımızı iletiyoruz.
+        </div>
+    </section>
+
+    <!-- ALT BÖLÜM: İMZA VE SAYAÇ KARTI -->
+    <footer class="footer-card">
+        <div class="signature-group">
+            <div class="signature">Saygılarımızla, KRAL Medya</div>
+            <div class="slogan">Daima Mutlu Kalınız.</div>
+        </div>
+
+        <!-- 🌟 DÜNYA GENELİ ORTAK OKUNDU SAYAÇ KARTI -->
+        <div class="counter-pill">
+            <div class="counter-dot"></div>
+            <div class="counter-text">Okuyan Gönül Dostu: <span id="readCountDisplay" class="counter-number">...</span></div>
+        </div>
+    </footer>
+
+</div>
+
+<script>
+    // 🌟 1 KİŞİ = 1 SAYIM GERÇEK SAYAÇ ENTEGRASYONU
+    (function initGlobalCounter() {
+        const STORAGE_KEY = 'kral_v26_minnettar_read_v1';
+        const displayElem = document.getElementById('readCountDisplay');
+        
+        let hasReadBefore = localStorage.getItem(STORAGE_KEY);
+        let apiUrl = 'https://ferdyy.com/DATA/KRALMEDYAFM/SAYACLAR/Minnettar.php';
+
+        // Bu cihaz sayfayı ilk kez açıyorsa sunucuya +1 yazdır ve cihazı damgala
+        if (!hasReadBefore) {
+            apiUrl += '?hit=1';
+            localStorage.setItem(STORAGE_KEY, 'yes');
+        }
+
+        // Sunucudan gerçek ortak sayıyı çek ve ekrana yazdır
+        fetch(apiUrl)
+            .then(res => res.json())
+            .then(data => {
+                if (displayElem && data.total) {
+                    displayElem.textContent = Number(data.total).toLocaleString('tr-TR');
+                }
+            })
+            .catch(() => {
+                if (displayElem) displayElem.textContent = "1";
+            });
+    })();
+</script>
+
+</body>
+</html>
