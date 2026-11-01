@@ -332,6 +332,7 @@
 <script>
     // 🌟 1 KİŞİ = 1 SAYIM GERÇEK SAYAÇ ENTEGRASYONU
     (function initGlobalCounter() {
+        // Test ederken kendi tarayıcını sıfırlamak istersen key adını değiştirebilirsin (örn: ..._v2)
         const STORAGE_KEY = 'kral_v26_minnettar_read_v1';
         const displayElem = document.getElementById('readCountDisplay');
         
@@ -348,12 +349,12 @@
         fetch(apiUrl)
             .then(res => res.json())
             .then(data => {
-                if (displayElem && data.total) {
+                if (displayElem && data.total !== undefined) {
                     displayElem.textContent = Number(data.total).toLocaleString('tr-TR');
                 }
             })
             .catch(() => {
-                if (displayElem) displayElem.textContent = "1";
+                if (displayElem) displayElem.textContent = "0";
             });
     })();
 </script>
